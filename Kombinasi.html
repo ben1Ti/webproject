@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOMBINASI</title>
+    <link href="https://fonts.google.com/share?selection.family=Chewy" rel="stylesheet" href="style.css">
+    <style>
+
+        html {
+            height: 200vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* background */
+        body {
+            height: auto;
+            margin: 1%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://i.pinimg.com/1200x/a9/14/8c/a9148c732b93b30ff2a4e022f43da837.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            flex-direction: column;
+        }
+
+        .kontainer {
+            margin: 0 auto; /* Membuatnya berada di tengah */
+            text-align: left; /* Membuat teks rata kiri */
+            padding: -10px;
+        }
+
+        .rata-kiri {
+            text-align: left;
+        }
+
+        .keterangan {
+            text-align: center;
+
+        }
+
+        .header-section {
+            align-items: center;
+            font-family: 'Chewy', cursive;
+            width: 35%;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Box kombinasi dan kasus */
+        .box-paragraf {
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+            padding: 20px;
+            border-radius: 40px;
+            width: 70%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 2%;
+        }  
+
+        /* Container untuk box contoh */
+        .rumus-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Box contoh */
+        .box-paragraf-contoh {
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+            padding: 50px;
+            border-radius: 40px;
+            width: 350px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Tombol untuk menampilkan jenis kombinasi */
+        .toggle-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: rgb(0, 0, 0);
+            border: none;
+            margin: 2%;
+            width: 25%;
+            padding: 30px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: large;
+            font-family: 'Chewy', cursive;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Box untuk jenis kombinasi */
+        .box-paragraf-jenis {
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+            padding: 20px;
+            border-radius: 40px;
+            width: 70%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 2%;
+            display: none; /* Disembunyikan awalnya */
+        }
+
+        /* Responsif: jika layar kecil, buat box menjadi vertikal */
+        @media (max-width: 768px) {
+            .rumus-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+
+        p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Box Kombinasi -->
+    <div class="box-paragraf" style="width: 15%; padding: 10px; text-align: center;">
+        <p style="font-family: 'Chewy', cursive; font-size: large;"><b>KOMBINASI</b></p>
+    </div>
+
+    <!-- Box pengertian Kombinasi -->
+    <div class="box-paragraf">
+        <p class="rata-kiri">Dalam Matematika, Kombinasi sendiri adalah teknik yang digunakan untuk menyusun suatu kelompok atau grup yang terdiri atas kumpulan sejumlah objek tanpa perlu memperhatikan urutannya, singkatnya kombinasi adalah kumpulan dari seluruh objek maupun sebagian objek yang menjadi satu.
+            Proses kombinasi sendiri adalah pemilihan objek atau item dari satu set maupun kumpulan objek, sehingga perhitungannya tidak menyerupai permutasi yang mempermasalahkan urutan pemilihan objek. Rumus kombinasi sendiri menganggap sama sebuah objek jika urutannya yang berbeda.</p>
+    </div>
+
+    <!-- Tombol untuk menampilkan jenis kombinasi -->
+    <button class="toggle-button" onclick="toggleJenisKombinasi()"><b>JENIS JENIS KOMBINASI</b></button>
+
+    <!-- Box Jenis Kombinasi -->
+    <div class="box-paragraf-jenis" id="jenisKombinasi">
+        <p style="font-family: 'Chewy', cursive; font-size: large;"></p>
+        <p class="rata-kiri"><b>1. Pengulangan yang diperbolehkan : </b></p>
+        <p class="rata-kiri">Dalam satu wadah terdapat 3 bola merah dan 3 bola biru, kemudian kamu berhasil mengambil 3 bola dari wadah tersebut yang terdiri dari 2 bola merah dan 1 bola biru.</p>
+        <p class="rata-kiri"><b>2. Pengulangan yang tidak diperbolehkan : </b></p>
+        <p class="rata-kiri">Kamu memilih 2 orang dari kelompok yang beranggotakan 5 orang. Tentu tidak mungkin jika orang pertama dan orang kedua adalah satu orang yang sama.</p>
+        <p style="font-family: 'Chewy', cursive; font-size: large;"><b>RUMUS</b></p>
+        <img src="Screenshot_2025-03-19_094940-removebg-preview.png">    
+        <p class="keterangan">n = banyaknya unsur yang tersedia.</p>
+        <P class="keterangan">r = banyaknya unsur yang disusun.</P>
+    </div>
+
+    <script>
+        function toggleJenisKombinasi() {
+            var jenisBox = document.getElementById("jenisKombinasi");
+            if (jenisBox.style.display === "none") {
+                jenisBox.style.display = "block";
+            } else {
+                jenisBox.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Container untuk menyusun box RUMUS dan CONTOH secara berdampingan -->
+    <div class="rumus-container">
+        <div class="box-paragraf-contoh">
+            <p style="font-family: 'Chewy', cursive; font-size: large;"><b>CONTOH 1</b></p>
+            <p class="rata-kiri">Dalam sebuah tim olahraga terdapat 8 pemain. Jika pelatih ingin memilih 3 pemain untuk menjadi kapten, wakil kapten, dan sekretaris tanpa memperhatikan urutan posisi mereka, berapa banyak cara yang bisa dilakukan?</p>
+            <p class="rata-kiri">Diketahui</p>
+            <p class="rata-kiri">n = 8</P>
+            <p class="rata-kiri">r = 3</p>
+            <p class="rata-kiri">Ditanya: <b>8C3</b></p>
+            <p class="rata-kiri"><b>8C3 = 8! / (3! (8-3)!)</b></p>
+            <p class="rata-kiri">= 8! / (3! × 5!)</p>
+            <p class="rata-kiri">= (8 × 7 × 6 × 5!) / (3 × 2 × 1 × 5!)</p>
+            <p class="rata-kiri">= (8 × 7 × 6) / 6</p>
+            <p class="rata-kiri">= 336 / 6</p>
+            <p class="rata-kiri"><b>= 56</b></p>
+            <p class="rata-kiri">Jadi, ada 56 cara untuk memilih tim olahraga</p>
+        </div>
+
+        <div class="box-paragraf-contoh">
+            <p style="font-family: 'Chewy', cursive; font-size: large;"><b>CONTOH 2</b></p>
+            <p class="rata-kiri">Sebuah tim beranggotakan 10 orang ingin memilih 4 orang untuk mewakili mereka dalam sebuah kompetisi. Berapa banyak cara untuk memilih 4 orang tersebut?</p>
+            <p class="rata-kiri">Diketahui</p>
+            <p class="rata-kiri">n = 10</P>
+            <p class="rata-kiri">r = 4</p>
+            <p class="rata-kiri">Ditanya: <b>10C4</b></p>
+            <p class="rata-kiri"><b>10C4 = 10! / (4! (10-4)!)</b></p>
+            <p class="rata-kiri">= 10! / (4! × 6!)</p>
+            <p class="rata-kiri">= (10 × 9 × 8 × 7 × 6!) / (4 × 3 × 2 × 1 × 6!)</p>
+            <p class="rata-kiri">= (10 × 9 × 8 × 7) / 24</p>
+            <p class="rata-kiri">= 5040 / 24</p>
+            <p class="rata-kiri"><b>= 210</b></p>
+            <p class="rata-kiri">Jadi, ada 210 cara untuk memilih tim untuk mewakili sebuah kompetisi</p>
+        </div>
+    </div>
+
+    <!-- Box Paragraf Kasus -->
+    <div class="box-paragraf" style="margin: 3.5%;">
+        <p style="font-family: 'Chewy', cursive; font-size: large;"><b>KASUS</b></p>
+        <p class="rata-kiri">Ingin membentuk sebuah tim kerja kelompok yang berisikan 4 anggota orang dari keseluruhan anggota yang berisikan 10 orang, maka berapa banyak cara memilih anggota tim kerja tersebut?</p>
+        <p class="rata-kiri">Diketahui : pengambilan 4 anggota dari 10 orang anggota, maka:</p>
+        <div class="kontainer">
+        <p>n = 10</p>
+        <p>r = 4</p>
+        <p>Jawab :</p>
+        <p>10C4 = (10.9.8.7) / (4.3.2.1)</p>
+        <p>= 210 cara</p>
+        <p>Jadi, jawabannya adalah sebanyak 210 cara yang dapat dilakukan.</p>
+        </div>
+    </div>
+
+</body>
+</html>

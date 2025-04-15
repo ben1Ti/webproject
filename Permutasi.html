@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Chewy', cursive; font-size: medium;">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERMUTASI</title>
+    <link href="https://fonts.google.com/share?selection.family=Chewy" rel="stylesheet" href="style.css">
+    <style>
+
+        html {
+            
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+           height: auto;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-image: url(https://i.pinimg.com/736x/30/01/18/30011807733ddc732a0cc7a4004fe607.jpg);
+           background-size:cover;
+           background-repeat:no-repeat;
+           background-position:center; 
+           background-attachment:fixed;
+           flex-direction: column;
+        }
+
+        .header-section{
+            align-items: center;
+            font-family: 'Chewy' , cursive;
+            width: 35%;
+            margin-top: 40% auto;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box-paragraf-awal{
+            background: rgba(255, 255, 255, 0.2); /* Putih dengan transparansi */
+            color: black; /* Warna teks */
+            padding: 20px;
+            border-radius: 15px;
+            width: 60%;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Efek blur kaca */
+            -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan biar terlihat elegan */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Tambahkan border agar lebih jelas */
+            margin-top: 10px;
+        }
+
+        .box-paragraf, .box-paragraf-jenis{
+            background: rgba(255, 255, 255, 0.2); /* Putih dengan transparansi */
+            color: black; /* Warna teks */
+            padding: 20px;
+            border-radius: 15px;
+            width: 60%;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Efek blur kaca */
+            -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan biar terlihat elegan */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Tambahkan border agar lebih jelas */
+            margin-top: 10px;
+            opacity: 0; /* Awalnya transparan */
+            transform: translateY(-10px); /* Geser ke atas sedikit */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            display: none; /* Awalnya tersembunyi */
+            margin-bottom: 10px;
+            
+        }
+
+        .box-paragraf-jenis.show {
+            opacity: 1; /* Muncul dengan fade-in */
+            transform: translateY(0); /* Kembali ke posisi normal */
+            display: block;
+        }
+
+        .box-paragraf-2{
+            cursor: pointer;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.2); /* Putih dengan transparansi */
+            color: black; /* Warna teks */
+            padding: 20px;
+            border-radius: 15px;
+            width: 40%;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Efek blur kaca */
+            -webkit-backdrop-filter: blur(10px); /* Untuk browser Safari */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan biar terlihat elegan */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Tambahkan border agar lebih jelas */
+        }
+
+        .box-paragraf-jenis {
+            display: none;
+        }
+
+        h4 {
+            margin-top: 5px;  
+            margin-bottom: 5px;
+        }
+
+        .box-soal-jenisPermutasi {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+
+        }
+
+        .box-soal-jenisPermutasi1 {
+            background: rgba(255, 255, 255, 0.2);
+            color: black;
+            padding: 50px;
+            border-radius: 40px;
+            width: 50%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1 style="border-radius: 35px;background-color: peachpuff;padding: 20px;">PERMUTASI</h1>
+    </div>
+    
+    <div class="box-paragraf-awal">
+        <p style="font-family: 'Chewy', cursive; font-size: larger;" >Permutasi adalah penyusunan kembali suatu kumpulan objek dalam urutan yang berbeda dari urutan yang semula.  Permutasi merupakan aturan pencacahan yang bertujuan untuk menentukan banyaknya kemungkinan yang akan terjadi dari suatu kejadian.</p>
+    </div>
+
+    <div onclick="toggleJenis()" class="box-paragraf-2">
+        <h1 style="font-family: 'Chewy', cursive;">Jenis-jenis Permutasi</h1>
+    </div>
+
+<!-- Box Jenis-Jenis Permutasi -->
+
+<!-- Box Jenis permutasi 1 -->
+
+    <div id="jenisPermutasi1" class="box-paragraf-jenis">
+        <h3>Permutasi Tanpa Pengulangan</h3>
+        <p>Permutasi ini digunakan untuk menentukan berapa banyak cara menyusun r unsur dari n unsur yang tersedia, dengan setiap unsur berbeda</p>
+        <img src="Desain_tanpa_judul__1_-removebg-preview.png">
+        <h4>Dimana: </h4>
+        <h4>n = jumlah total objek</h4>
+        <h4>r = jumlah objek yang dipilih</h4>
+        <h4>! = faktorial</h4>
+        <h3 style="color: brown;">Contoh Soal</h3>
+
+<!-- Box soal Jenis permutasi 1 -->
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>1. Hitunglah permutasi dari 10 unsur yang diambil 4 unsur secara bersamaan!</h4>
+                <h5>Pembahasan: </h5>
+                <img src="Screenshot_2025-03-19_122314-removebg-preview.png" style="width: 115%;">
+            </div>
+
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>2. Hitunglah permutasi dari 8 unsur yang diambil 3 unsur secara bersamaan!</h4>
+                <h5>Pembahasan:  </h5>
+                <img src="Screenshot_2025-03-19_122046-removebg-preview.png" style="width: 110%;">
+            </div>
+
+        </div>
+
+        <h3 style="color: brown;">Contoh Kasus</h3>
+
+<!-- Box kasus Jenis permutasi 1 -->
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>Di sebuah sekolah, ada 9 orang guru yang akan dipilih untuk menjadi panitia ulangan yang terdiri dari 3 posisi: ketua, sekretaris, dan bendahara. Berapakah banyaknya susunan panitia yang mungkin terbentuk?</h4>
+                <h5 style="color: brown;">Pembahasan: </h5>
+                <img src="Screenshot_2025-03-19_225627-removebg-preview.png" style="width: 105%;">
+            </div>
+        </div>
+
+        
+
+    </div>
+
+<!-- Box Jenis Permutasi 2 -->
+
+    <div id="jenisPermutasi2" class="box-paragraf-jenis">
+        <h3>Permutasi Dengan Pengulangan</h3>
+        <p>Permutasi ini adalah permutasi yang memuat unsur dengan sifat yang sama atau identic.</p>
+        <img src="Desain_tanpa_judul__4_-removebg-preview.png">
+        <h4>Dimana: </h4>
+        <h4>n = jumlah total objek</h4>
+        <h4>k1, k2, ...., km = jumlah pengulangan dari setiap elemen yang sama</h4>
+        <h3 style="color: brown;">Contoh Soal</h3>
+
+<!-- Box  Soal Jenis-Jenis Permutasi 2 -->
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>1. Hitunglah permutasi dari 8 unsur dengan 3 unsur yang sama jenis A dan 2 unsur yang sama jenis B!</h4>
+                <h5 style="color: brown;">Pembahasan: </h5>
+                <img src="Screenshot_2025-03-19_222224-removebg-preview.png" style="width: 115%;">
+            </div>
+
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>2. Hitunglah permutasi dari 10 unsur dengan 4 unsur yang sama jenis A dan 3  unsur yang sama jenis B!</h4>
+                <h5 style="color: brown;">Pembahasan:  </h5>
+                <img src="Screenshot_2025-03-19_222709-removebg-preview.png" style="width: 110%;">
+            </div>
+        </div>
+
+        <h3 style="color: brown;">Contoh Kasus: </h3>
+
+<!-- Box kasus Jenis-Jenis Permutasi 2 -->
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>Hitunglah permutasi dari huruf dalam kata "BANANA".</h4>
+                <h5 style="color: brown;">Pembahasan: </h5>
+                <img src="Screenshot_2025-03-19_223932-removebg-preview.png" style="width: 105%;">
+            </div>
+        </div>
+
+    </div>
+
+<!-- Box Jenis Permutasi 3 -->
+
+    <div id="jenisPermutasi3" class="box-paragraf-jenis">
+        <h3>Permutasi Siklis</h3>
+        <p>Permutasi siklis adalah penyusunan unsur atau objek dalam bentuk melingkar </p>
+        <img src="Desain_tanpa_judul__3_-removebg-preview.png">
+        <h4>Dimana: </h4>
+        <h4>n = jumlah total objek</h4>
+        <h3 style="color: brown;">Contoh Soal</h3>
+
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>1. Hitunglah banyaknya cara untuk menyusun 7 objek berbeda dalam lingkaran!</h4>
+                <h5 style="color: brown;">Pembahasan: </h5>
+                <img src="Screenshot_2025-03-20_080619-removebg-preview.png" style="width: 115%;">
+            </div>
+
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>2. Berapa banyak cara untuk menyusun 5 orang dalam sebuah meja bundar?</h4>
+                <h5 style="color: brown;">Pembahasan:  </h5>
+                <img src="Screenshot_2025-03-20_080814-removebg-preview.png" style="width: 110%;">
+            </div>
+
+        </div>
+
+        <h3 style="color: brown;">Contoh Kasus: </h3>
+
+<!-- Box kasus Jenis-Jenis Permutasi 3 -->
+        <div class="box-soal-jenisPermutasi">
+            <div class="box-soal-jenisPermutasi1 ">
+                <h4>Ada 8 manik-manik berbeda yang akan digunakan untuk membuat gelang. Berapa banyak cara menyusun manik-manik tersebut?</h4>
+                <h5 style="color: brown;">Pembahasan: </h5>
+                <img src="Screenshot_2025-03-20_081150-removebg-preview.png" style="width: 105%;">
+            </div>
+        </div>
+
+    </div>
+
+<!-- JavaScript untuk interaktif -->
+
+    <script>
+        function toggleJenis() {
+            let boxes = document.querySelectorAll(".box-paragraf-jenis");
+            boxes.forEach(box => {
+                if (box.classList.contains("show")) {
+                    box.classList.remove("show"); // Sembunyikan dengan animasi
+                    setTimeout(() => box.style.display = "none", 500); // Delay agar animasi selesai dulu
+                } else {
+                    box.style.display = "block";
+                    setTimeout(() => box.classList.add("show"), 10); // Tambahkan kelas setelah display aktif
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
