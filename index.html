@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>PROJEK MATDIS</title>
+<link href="https://fonts.google.com/share?selection.family=Chewy" rel="stylesheet" href="style.css">
+<style>
+    
+    .btn {
+        transition: transform 0.3s ease;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #A47c66;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 24px ;
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .btn:active {
+        transform: translate(5px);
+    }
+    
+    .header-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0px;          
+    }
+
+    .member-section {
+        width: 80%; 
+        margin: 2% auto; 
+        margin-top: 3%;
+        margin-bottom: 0px;
+        text-align: center;
+        background-color: #E1DDD3;
+        border-radius: 10px;
+        padding: 1px;
+    }
+
+    body {
+        font-family: 'Chewy' , cursive;
+        padding: 1%; /*untuk atur jarak dari objek ke bagian luar*/
+        justify-content: center;
+        background-image: url(https://i.pinimg.com/1200x/58/71/8f/58718f772809f01a4ab289e294b9a4d3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat; 
+        background-position: center; 
+        background-attachment: fixed;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    a:hover {
+        transform: scale(1.2);
+    }
+
+   .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 15px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .grid-container-b {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0px;
+        max-width: 1200px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .kotak {
+        background: #e7ceae;
+        display: flex;
+        padding: 20px;
+        border-radius: 30px;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .kotak:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        background: #dec8a3;
+    }
+
+    .kolom-kiri {
+        width: 100px;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .kolom-kanan {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .kolom-kanan h4 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        color: #6b503a;
+    }
+
+    .kolom-kanan p {
+        margin: 0;
+        font-size: 16px;
+        color: #8b6b4e;
+    }
+
+    .foto {
+        object-fit: cover;
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+    }
+
+</style>
+</head>
+    <div class="header-section">
+        <h1 style="color:#A47c66; padding-top: 50px;">Pelajari Berbagai Materi Dengan Mudah</h1>
+    </div>
+
+    
+   <div style="width:100%; text-align: center;" >
+        <a href="Permutasi.html" class="btn btn-permutasi">PERMUTASI</a>
+   </div>
+   <div style="width:100%; margin-top: 1%;text-align: center;" >
+        <a href="Kombinasi.html" class="btn btn-kombinasi">KOMBINASI</a>
+   </div>
+
+   <div class="member-section">
+    <h3>ANGGOTA KELOMPOK :</h3>
+   </div>
+
+   <div class="grid-container">
+    <!-- 1 -->
+        <div class="kotak">
+            <div class="kolom-kiri">
+                <img src="LISTA.jpeg" width="100%" alt="Avatar" class="foto">
+            </div>
+            <div class="kolom-kanan">
+                <a href="https://www.instagram.com/liztairawannn_/" ><h4 color: inherit;>IFFAH LISTA</h4></a>
+                <p>(2403111895)</p>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="kotak">
+            <div class="kolom-kiri">
+                <img src="PUTRI.jpeg" width="100%"
+                    alt="Avatar" class="foto">
+            </div>
+            <div class="kolom-kanan">
+                <a href="https://www.instagram.com/putriinsanikameliaa/"><h4>PUTRI INSANI K</h4></a>
+                <p>(2403111712)</p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="kotak">
+            <div class="kolom-kiri">
+                <img src="NURUL.jpeg" width="100%" alt="Avatar" class="foto">
+            </div>
+            <div class="kolom-kanan">
+                <a href="https://www.instagram.com/ben_tinurr/"><h4>NURUL ATIQAH</h4></a>
+                <p>(2403112259)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container-b">
+    <!-- 4 -->
+    <div class="kotak">
+        <div class="kolom-kiri">
+            <img src="RIFQI.jpeg" width="100%" alt="Avatar" class="foto">
+        </div>
+        <div class="kolom-kanan">
+            <a href="https://www.instagram.com/rifqi_fajrian_/"><h4>RIFQI FAJRIAN</h4></a>
+            <p>(2403112180)</p>    
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="kotak">
+        <div class="kolom-kiri">
+            <img src="YUSUF.jpeg" width="100%"
+                alt="Avatar" class="foto">
+        </div>
+        <div class="kolom-kanan">
+            <a href="https://www.instagram.com/yusufalbrr/" color: inherit;><h4>YUSUF ALBARR</h4></a>
+            <p>(2403112494)</p>
+        </div>
+    </div>
+</body>
+</html>
